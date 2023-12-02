@@ -1,0 +1,94 @@
+{% extends 'landloardindex.html' %}
+{% block content %}
+<style>
+    .modal-body input,select{
+        width:90%;
+        padding: 6px;
+        border: .5px solid gray;
+        outline: none;
+    }
+    .modal-body  input:focus{
+        border: .5px solid lightblue;
+    }
+    .modal-dialog{
+        z-index: 2 !important;
+    }
+</style>
+
+<div class="container mt-5 text-center">
+    <button class="btn btn-outline-dark btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Property</button>
+</div>
+<div class="container">
+    {% for message  in messages  %}
+      
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+    <strong>Alert!!!</strong> {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+
+</div>
+
+<div class="container mt-5">
+    <h3 class="text-center">Property List</h3>
+    <table class="table table-striped mt-5 mb-5">
+        
+        <tr>
+            <th>Property name</th>
+            <th>Place</th>
+            <th>Rent Per Month</th>
+            <th>Status</th>
+            <th>View</th>
+        </tr>
+        {% for i in propertys  %}
+          
+        <tr>
+            <td>{{i.Name}}</td>
+            <td>{{i.Place}}, {{i.District}}, {{i.State}}</td>
+            <td>{{i.Rent_per_month}}</td>
+            {%if i.Status == True%}
+                <td ><span class="badge bg-success">Not Rented</span> </td>
+            {% else %}
+            <td ><span class="badge bg-danger">Rented</span> </td>
+            {% endif%}
+            <td>
+                <a href="" class="btn btn-outline-dark btn-sm">View</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+<!-- property add model   -->
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add New Property</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {% for f in form %}
+
+                {{f.label}} <br>
+                {{f}} <br><br>
+
+                {% endfor %}
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}

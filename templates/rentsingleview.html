@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="container mt-5">
+    <h3 class="text-center">Single View</h3>
+    {% for message in messages  %}
+                      
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Alert!!!</strong> {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+    <h4 class="text-center text-info ">{{prop.Name}}</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{prop.Image.url}}" alt="" width="90%" height="300px">
+        </div>
+        <div class="col-md-6 text-center">
+
+            <h3>Rent: ₹ {{prop.Rent_per_month}}</h3>
+            <h3>Sqft: {{prop.Squre_Feet}}</h3>
+            <h3>Bed Rooms: {{prop.Bed_Rooms}}</h3>
+            <h3>Bath Rooms: {{prop.Bath_Rooms}}</h3>
+
+            <a href="{%url 'BookRentelProperty' prop.id %}" class="btn btn-outline-success btn-lg">Book This For Rent</a>
+            
+            
+        </div>
+    </div>
+</div>
+  
+{% endblock %}
