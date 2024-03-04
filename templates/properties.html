@@ -47,13 +47,15 @@
             <td>{{i.Place}}, {{i.District}}, {{i.State}}</td>
             <td>{{i.Rent_per_month}}</td>
             {%if i.Status == True%}
-                <td ><span class="badge bg-success">Not Rented</span> </td>
+                <td ><span class="badge bg-success">Not saled</span> </td>
             {% else %}
-            <td ><span class="badge bg-danger">Rented</span> </td>
-            {% endif%}
+            <td ><span class="badge bg-danger">Saled</span> </td>
             <td>
-                <a href="" class="btn btn-outline-dark btn-sm">View</a>
-            </td>
+              <a href="{%url 'Agreement' i.id %}" class="btn btn-outline-dark btn-sm">View</a>
+          </td>
+            {% endif%}
+            <td></td>
+           
         </tr>
         {% endfor %}
 

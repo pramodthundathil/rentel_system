@@ -177,3 +177,8 @@ def LandLordInformation(request,pk):
         "user":user
     }
     return render(request, "landloarsinformation.html",context)
+
+
+def Agreement(request,pk):
+    pr = Properties.objects.get(id = pk)
+    return render(request,"rentagreement.html",{"pr":pr})

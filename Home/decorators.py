@@ -47,5 +47,12 @@ def admin_only(view_func):
         
         if group == 'landloard':
             return redirect('LandLoardIndex')
+        
+        if group == 'officer':
+            return redirect('LandLoardIndex')
+        
+        if group == 'staff':
+            return redirect('LandLoardIndex')
+        
               
     return wrapper_function

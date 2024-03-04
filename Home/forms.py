@@ -24,4 +24,4 @@ class UserAddForm(UserCreationForm):
 class PropertyAddForm(ModelForm):
     class Meta:
         model = Properties
-        fields = ["Name","Squre_Feet","Bed_Rooms","Bath_Rooms","Rent_per_month","Place","District","State","Description","Image"] 
+        fields = ["Name","category","Squre_Feet","Bed_Rooms","Bath_Rooms","Rent_per_month","Place","District","State","Description","Image"] 

@@ -22,6 +22,7 @@ urlpatterns = [
     path("DeleteTenentBookingLandlord/<int:pk>",views.DeleteTenentBookingLandlord,name="DeleteTenentBookingLandlord"),
     path("ViewTenentDetails/<int:pk>",views.ViewTenentDetails,name="ViewTenentDetails"),
     path("LandLordInformation/<str:pk>",views.LandLordInformation,name="LandLordInformation"),
+    path("Agreement/<str:pk>",views.Agreement,name="Agreement"),
 
 
 

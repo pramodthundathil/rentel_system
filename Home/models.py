@@ -4,7 +4,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Properties(models.Model):
+    options = (("Apartment","Apartment"),("House","House"),("office","office"),("Villa","Villa"))
+
     Name = models.CharField(max_length=255)
+    category = models.CharField(max_length= 50,choices = options, default = "House" )
     Squre_Feet = models.FloatField(null=True,blank=True)
     Bed_Rooms = models.IntegerField(null=True,blank=True)
     Bath_Rooms = models.IntegerField(null=True,blank=True)
