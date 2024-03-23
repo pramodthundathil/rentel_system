@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms import TextInput,PasswordInput, ModelForm
-from .models import Properties
+from .models import Properties, PropertiesSale
 
 
 
@@ -25,3 +25,8 @@ class PropertyAddForm(ModelForm):
     class Meta:
         model = Properties
         fields = ["Name","category","Squre_Feet","Bed_Rooms","Bath_Rooms","Rent_per_month","Place","District","State","Description","Image"] 
+
+class PropertySaleAddForm(ModelForm):
+    class Meta:
+        model = PropertiesSale
+        fields = ["Name","category","Squre_Feet","Bed_Rooms","Bath_Rooms","amount","Place","District","State","Description","Image"] 

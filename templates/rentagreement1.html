@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<style>
+    .item{
+        width:400px;
+        height: auto;
+        padding: 20px;
+        margin: auto;
+        border: 1px solid gray;
+        border-radius: 20px;
+    }
+</style>
+
+<div class="content">
+    <div class="item">
+        <h2>Agreement</h2>
+
+        <p class="text-center">
+            Whereas the {{pr.User_id}} has agreed to sell one apartment on the {{pr.name}}situated at {{pr.District}} {{pr.State}}. being constructed and having the specifications mentioned in the Schedule 11 hereunder written at a price of Rs {{pr.Rent_per_month}}subject to the terms and conditions hereinafter appearing
+        </p>
+
+
+
+    </div>
+</div>
+
+{% endblock %}

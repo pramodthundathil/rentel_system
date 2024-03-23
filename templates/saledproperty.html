@@ -1,0 +1,32 @@
+{% extends 'landloardindex.html' %}
+{% block content %}
+
+<div class="container text-center mt-5"></div>
+
+    <h4>Sale</h4>
+    <table class="table table-striped mt-5">
+        <tr>
+            <th>Propery</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Tenent</th>
+            
+        </tr>
+        {% for i in sale  %}
+          
+        <tr>
+            <th>{{i.property.Name}}</th>
+            <th>{{i.property.amount}}</th>
+            <th>{{i.sale_date}}</th>
+            <th><a href="{%url 'ViewTenentDetails' i.Owner.id %}" class="btn btn-info btn-sm">View Tenent</a></th>
+           
+          
+            
+        </tr>
+     
+        {% endfor %}
+
+    </table>
+</div>
+
+{% endblock %}

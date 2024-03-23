@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="container mt-5">
-    <h3 class="text-center">Single View</h3>
+    <h3 class="text-center">Single View Sale</h3>
     {% for message in messages  %}
                       
     <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-6 text-center">
 
-            <h3>Price: ₹ {{prop.Rent_per_month}}</h3>
+            <h3>Price: ₹ {{prop.amount}}</h3>
             <h3>Sqft: {{prop.Squre_Feet}}</h3>
             <h3>Bed Rooms: {{prop.Bed_Rooms}}</h3>
             <h3>Bath Rooms: {{prop.Bath_Rooms}}</h3>
@@ -25,7 +25,7 @@
 
             {% if prop.Status == True %}
 
-            <a href="{%url 'BookRentelProperty' prop.id %}" class="btn btn-outline-success btn-lg">Give Intrest</a>
+            <a href="{%url 'BookForBuy' prop.id %}" class="btn btn-outline-success btn-lg">Give Intrest</a>
             {% else %}
 
             <span class="badge bg-warning">Property is not Available</span>

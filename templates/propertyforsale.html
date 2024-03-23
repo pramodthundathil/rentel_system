@@ -16,6 +16,7 @@
 </style>
 
 <div class="container mt-5 text-center">
+    
     <button class="btn btn-outline-dark btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Property</button>
 </div>
 <div class="container">
@@ -30,30 +31,29 @@
 </div>
 
 <div class="container mt-5">
-    <h3 class="text-center">Property List For Rent</h3>
+    <h3 class="text-center">Property List For Sale</h3>
     <table class="table table-striped mt-5 mb-5">
         
         <tr>
             <th>Property name</th>
             <th>Place</th>
-            <th>Rent Per Month</th>
+            <th>Amount</th>
             <th>Status</th>
-            <th>Cancel Agreement</th>
             <th>View</th>
         </tr>
-        {% for i in propertys  %}
+        {% for i in properties  %}
           
         <tr>
             <td>{{i.Name}}</td>
             <td>{{i.Place}}, {{i.District}}, {{i.State}}</td>
-            <td>{{i.Rent_per_month}}</td>
+            <td>{{i.amount}}</td>
             {%if i.Status == True%}
-                <td ><span class="badge bg-success">Not Rented</span> </td>
+                <td ><span class="badge bg-success">Not Saled</span> </td>
             {% else %}
-            <td ><span class="badge bg-danger">rented</span> </td>
+            <td ><span class="badge bg-danger">Saled</span> </td>
             <td><a href="" class="btn btn-outline-warning btn-sm">Cancel</a></td>
             <td>
-              <a href="{%url 'Agreement' i.id %}" class="btn btn-outline-dark btn-sm">View</a>
+              <!-- <a href="{%url 'Agreement' i.id %}" class="btn btn-outline-dark btn-sm">View</a> -->
           </td>
             {% endif%}
             <td></td>

@@ -40,7 +40,7 @@ def admin_only(view_func):
             return redirect("UserTypeConfirmation")
 
         if group == "admin":
-            return redirect('admin/')
+            return redirect('AdminIndex')
             
         if group == 'tenent':
             return view_func(request, *args, **kwargs)
@@ -52,7 +52,7 @@ def admin_only(view_func):
             return redirect('LandLoardIndex')
         
         if group == 'staff':
-            return redirect('LandLoardIndex')
+            return redirect('StaffIndex')
         
               
     return wrapper_function
